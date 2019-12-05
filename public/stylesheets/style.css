@@ -1,3 +1,108 @@
+:root {
+  --white: #ffffff;
+  --red: #de0000;
+  --main-dark-blue: #0684ac;
+  --dark-blue: #0885ac;
+  --transparent-blue: #0684ac66;
+  --yellow: #c7972c;
+  --dark-grey-text: #3b3939d6;
+  --dark-grey: #707070;
+  --light-grey: #00000029;
+}
 body {
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background: transparent
+    linear-gradient(
+      247deg,
+      var(--main-dark-blue) 0%,
+      var(--transparent-blue) 100%
+    )
+    0% 0% no-repeat padding-box;
+}
+main {
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+  width: 420px;
+  height: 570px;
+  margin: 10% auto;
+  padding: 1.5rem;
+  background-color: var(--white);
+  box-shadow: 0px 3px 6px var(--light-grey);
+  box-sizing: border-box;
+}
+h1 {
+  color: var(--dark-grey-text);
+  font-weight: normal;
+  font-size: 40px;
+}
+#logo {
+  width: 50%;
+  height: auto;
+}
+#seat-lookup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#seat-lookup label {
+  display: flex;
+  flex-direction: column;
+}
+#seat-lookup input {
+  font-size: 26px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  color: var(--dark-grey-text);
+  width: 300px;
+  box-shadow: 0px 3px 6px var(--light-grey);
+  border: 1px solid var(--dark-grey);
+}
+#seat-lookup button {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  width: 132px;
+  height: 49px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  margin-top: 3.5rem;
+  box-shadow: 0px 3px 6px var(--light-grey);
+}
+#seat-location-container {
+  color: var(--dark-blue);
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+#seat-location-container p {
+  margin: 0.2rem;
+}
+#error {
+  color: var(--red);
+  text-align: center;
+}
+.search {
+  border: 1px solid var(--dark-grey);
+  height: 3rem;
+}
+
+@media (max-width: 500px) {
+  main {
+    width: fit-content;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+  body {
+    background-image: none;
+  }
 }
