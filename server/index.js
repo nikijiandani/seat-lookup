@@ -6,11 +6,12 @@ const port = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 app.get('/api/people', (req, res) => {
-  let { firstName = '', lastName = '' } = req.query;
+  let { firstName, lastName } = req.query;
   const result = data.filter(
     person =>
-      (!firstName || person.first_name === firstName) &&
-      (!lastName || person.last_name === lastName)
+      (!firstName ||
+        person.first_name.toLowerCase() === firstName.toLowerCase()) &&
+      (!lastName || person.last_name.toLowerCase() === lastName.toLowerCase())
   );
 
   if (!firstName && !lastName) {
@@ -18,11 +19,7 @@ app.get('/api/people', (req, res) => {
       'Welcome to the internal people search directory. You can query this API with firstName and lastName query parameters.'
     );
   } else {
-    if (result.length > 0) {
-      return res.json(result);
-    } else {
-      res.send(`Sorry, cannot find ${firstName} ${lastName} in the system`);
-    }
+    return res.json(result);
   }
 });
 

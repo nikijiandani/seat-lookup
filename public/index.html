@@ -5,20 +5,23 @@
     <title>Seat Lookup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/scripts/seat.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <img src="/images/logo.png" alt="logo">
-    </header>
     <main>
-      <h1>Seat Lookup</h1>
-      <label>
-        Name:
+
+      <header>
+        <img src="/images/logo.png" alt="logo" id="logo">
+      </header>
+
+      <section id="seat-lookup">
+        <h1>Seat Lookup</h1>
         <input type="text" class="search">
-      </label>
-      <button type="button">Go</button>
+        <button type="button" id="button">Go</button>
+        <section id="seat-location-container"></section>
+      </section>
+
     </main>
+    <script src="/scripts/seat.js"></script>
   </body>
 </html>
